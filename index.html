@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TwinIsland's Blog">
+    <meta name="author" content="TwinIsland">
+
+    <title>SuikaSPA Template</title>
+    <link rel="icon" href="/img/favicon.png">
+
+    <link rel="stylesheet" href="/css/picnic.min.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <script defer src="/js/suika.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="page-content"></div>
+    </div>
+
+    <footer class="footer">
+        <p>Footer</p>
+    </footer>
+
+
+    <a tabindex="-1" class="top pseudo button" id="go">
+        ▲Up you go▲
+    </a>
+
+    <!-- router register -->
+    <script async src="/js/router.js"></script>
+
+    <script>
+        document.addEventListener('scroll', function () {
+            var top = window.scrollY || document.documentElement.scrollTop;
+            var backToTopButton = document.querySelector('#go');
+
+            if (top > 800) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        document.getElementById('go').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
